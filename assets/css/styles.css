@@ -107,6 +107,12 @@ main {
   text-align: center;
   border: none;
   color: #fff;
+  transition: all 0.3s;
+}
+.key:hover {
+  background-color: #1156af;
+  box-shadow: 0px 0px 8px 4px rgba(57, 162, 219, 0.44);
+  transform: scale(1.06);
 }
 #row-1 .key:last-child {
   width: calc(1.5 * var(--key_dimensions));
