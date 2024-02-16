@@ -17,9 +17,17 @@ const keys = [
 
 const keyboard = document.querySelector(".keyboard");
 const textArea = document.getElementById("textarea");
-
+const audioElement = document.getElementById(`audio`);
 let isShifted = false;
 let displayInput = "";
+
+// Play audio function
+const playAudio = (audioElement) => {
+  if (audioElement) {
+    audioElement.currentTime = 0; // Reset the audio to the beginning
+    audioElement.play();
+  }
+};
 
 const markup = `${keys
   .map(
@@ -57,7 +65,7 @@ const implementKeyBoard = () => {
     } else {
       displayInput += isShifted ? targetKeyValue.toUpperCase() : targetKeyValue;
     }
-
+    playAudio(audioElement);
     showInput(displayInput);
   });
 };
